@@ -11,7 +11,7 @@ login(token="Your HuggingFace Token")
 torch.backends.cuda.enable_mem_efficient_sdp(False)
 torch.backends.cuda.enable_flash_sdp(False)
 
-# Reading in the data file
+# Reading in the data file CSV form
 df = pd.read_csv("universal_top_spotify_songs.csv")
 
 # Subsetting dataset
