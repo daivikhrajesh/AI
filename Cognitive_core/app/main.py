@@ -1,37 +1,32 @@
-import importlib
-import os
-from api.app import app  # Importing FastAPI app from api
-
-def load_module(module_name):
-    module_path = os.path.join(os.path.dirname(__file__), f"{module_name}.py")
-    spec = importlib.util.spec_from_file_location(module_name, module_path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
-
-from main.comprehension.comprehension_agent import ComprehensionAgent
-from main.orchestration.orchestrator import Orchestrator
-from main.reasoning.reasoning_agent import ReasoningAgent
-from main.evaluation.evaluator import Evaluator
-
-print('Cognitive CORE - Initializing...')
-
-def main():
-    print('Cognitive Core - Starting...')
+from app.main.comprehension.comprehension_agent import ComprehensionAgent
+from app.main.orchestration.orchestrator import Orchestrator
+from app.main.reasoning.reasoning_agent import ReasoningAgent
+from app.main.evaluation.evaluator import Evaluator
 
 def process_user_input(user_input: str) -> str:
     # Initialize system components
-    comprehension = ComprehensionAgent()
+    comprehension_agent = ComprehensionAgent()
     orchestrator = Orchestrator()
-    reasoning = ReasoningAgent()
+    reasoning_agent = ReasoningAgent()
     evaluator = Evaluator()
 
-    structured_input = comprehension.process_input(user_input)
+    # Process the input through the comprehension agent
+    structured_input = comprehension_agent.process_input(user_input)
+
+    # Delegate the task using the orchestrator
     task = orchestrator.delegate_task(structured_input)
-    solution = reasoning.solve(task)
+
+    # Solve the task with the reasoning agent
+    solution = reasoning_agent.solve(task)
+
+    # Evaluate the solution with the evaluator
     evaluation = evaluator.evaluate(solution)
 
     return evaluation
 
 if __name__ == "__main__":
-    main()
+    # Example run for manual testing
+    print("Cognitive CORE - Starting...")
+    user_input = input("Enter your input: ")
+    result = process_user_input(user_input)
+    print("Evaluation Result:", result)

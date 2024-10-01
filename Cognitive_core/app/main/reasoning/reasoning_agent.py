@@ -1,9 +1,9 @@
 class ReasoningAgent:
     def __init__(self):
-        # Initialization for reasoning capabilities, knowledge base access, etc.
+        # Initialize reasoning logic
         pass
 
     def solve(self, task: dict) -> dict:
-        # Placeholder for solving logic
-        solution = {"id": task["id"], "status": "solved", "result": "Solution to: " + task["data"]["data"]}
+        # Simulate solving the task
+        solution = {"id": task["id"], "status": "solved", "result": f"Solution to: {task['data']['data']}"}
         return solution
