@@ -1,9 +1,12 @@
-class ReasoningAgent:
-    def __init__(self):
-        # Initialize reasoning logic
-        pass
+def reason(data):
+    """
+    Reason based on the provided data.
+    
+    Args:
+    - data: The data to reason on.
 
-    def solve(self, task: dict) -> dict:
-        # Simulate solving the task
-        solution = {"id": task["id"], "status": "solved", "result": f"Solution to: {task['data']['data']}"}
-        return solution
+    Returns:
+    - dict: Reasoning results.
+    """
+    # Reasoning logic here
+    return {"reasoning": "reasoning result"}

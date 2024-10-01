@@ -6,5 +6,5 @@ app = FastAPI()
 app.include_router(example_router)
 
 @app.get("/")
-async def read_root():
+async def root():
     return {"message": "Welcome to the Cognitive CORE API"}

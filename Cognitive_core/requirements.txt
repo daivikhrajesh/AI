@@ -7,3 +7,4 @@ nltk
 spacy
 pydantic
 loguru
+pytest
