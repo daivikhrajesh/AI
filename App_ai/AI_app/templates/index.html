@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Recognition</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding: 50px;
+      }
+
+      h1.title {
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .custom-file-label::after {
+        content: "Choose file";
+      }
+
+      .image-preview {
+        margin-top: 20px;
+        display: none;
+        text-align: center;
+        width: 100%;
+      }
+
+      .preview-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .preview-container img {
+        max-width: 100%;
+        max-height: 400px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .preview-container img:hover {
+        transform: scale(1.1);
+      }
+
+      .predicted-digit {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-left: 20px;
+      }
+
+      .prediction-info {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .prediction-info .text {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title mt-5">Digit Recognition</h1>
+      <form
+        action="/upload"
+        method="post"
+        enctype="multipart/form-data"
+        class="mt-4"
+      >
+        <div class="custom-file">
+          <input
+            type="file"
+            class="custom-file-input"
+            id="customFile"
+            name="file"
+            accept=".jpg,.jpeg,.png,.web"
+          />
+          <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Predict</button>
+      </form>
+
+      <div class="image-preview" id="imagePreview">
+        <h5 class="mt-4">Uploaded Image Preview:</h5>
+        <div class="preview-container">
+          <img id="img-preview" src="#" alt="Uploaded Image" />
+        </div>
+      </div>
+
+      <div class="prediction-info" id="predictionInfo">
+        <div class="preview-container">
+          <div class="predicted-digit" id="predicted-digit"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Display selected file name in file input field
+      $("#customFile").on("change", function () {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).next(".custom-file-label").html(fileName);
+
+        // Show image preview
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $("#img-preview").attr("src", e.target.result);
+          $(".image-preview").show();
+        };
+        reader.readAsDataURL(this.files[0]);
+      });
+
+      // Example function to display predicted digit
+      function displayPredictedDigit(digit) {
+        $("#predicted-digit").text("Predicted Digit: " + digit);
+        $("#predictionInfo").show(); // Show the prediction info
+      }
+    </script>
+  </body>
+</html>

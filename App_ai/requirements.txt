@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+//tensorflow
+flask
+//numpy
+=======
+//tensorflow
+flask
+//numpy
+>>>>>>> 6da5580063cea32cd09a92fe2e4ab4210c5969ac
+//pillow
