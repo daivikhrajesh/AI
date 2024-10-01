@@ -5,3 +5,5 @@ pandas
 scikit-learn
 nltk
 spacy
+pydantic
+loguru
