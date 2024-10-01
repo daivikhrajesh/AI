@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.main import process_user_input
+from app.main.core import process_user_input  # Update import to core.py
 
 router = APIRouter()
 
