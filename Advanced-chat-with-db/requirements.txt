@@ -1,0 +1,9 @@
+langchain
+openai
+sqlalchemy
+langchain-experimental
+
+streamlit
+sqlalchemy
+transformers
+torch
