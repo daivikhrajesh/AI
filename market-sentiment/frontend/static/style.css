@@ -1,0 +1,38 @@
+/* frontend/static/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stock-section {
+    margin-top: 40px;
+}
+
+.data {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.data th, .data td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.data th {
+    background-color: #4CAF50;
+    color: white;
+}

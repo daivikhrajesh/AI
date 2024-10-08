@@ -1,0 +1,16 @@
+Flask
+beautifulsoup4
+requests
+nltk
+yfinance
+keras
+tensorflow
+pandas
+numpy
+scikit-learn
+newsapi-python
+plotly
+scikit-learn
+textblob
+stable-baselines3
+gym

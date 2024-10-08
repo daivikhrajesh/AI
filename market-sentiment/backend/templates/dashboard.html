@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock News Sentiment Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        ul li:last-child {
+            border-bottom: none;
+        }
+        .positive {
+            color: green;
+        }
+        .negative {
+            color: red;
+        }
+        .neutral {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Market Sentiment Analyzer</h1>
+
+        <!-- News Headlines Section -->
+        <h2>News Headlines</h2>
+        <ul>
+            {% for news_item in news %}
+                <li>{{ news_item }}</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Sentiment Analysis Section -->
+        <h2>Sentiment Analysis</h2>
+        <ul>
+            {% for sentiment in sentiments %}
+                <li class="{% if sentiment == 'Positive' %}positive{% elif sentiment == 'Negative' %}negative{% else %}neutral{% endif %}">
+                    Sentiment: {{ sentiment }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
