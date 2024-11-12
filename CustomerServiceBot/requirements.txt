@@ -1,0 +1,5 @@
+rasa==1.10.8
+rasa[spacy]
+pandas==1.1.0
+nltk==3.5
+fuzzywuzzy==0.18.0
