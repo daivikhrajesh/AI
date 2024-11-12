@@ -1,0 +1,11 @@
+stages:
+  preprocess:
+    cmd: python src/data_processing.py
+    deps:
+      - data/my_dataset.csv
+    outs:
+      - data/processed/processed_data.csv
+  train:
+    cmd: python src/model.py
+    deps:
+      - data/processed/processed_data.csv

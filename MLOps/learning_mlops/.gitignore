@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+data/processed/
+mlflow/
+*.log
+.v.\venv\Scripts\activateenv

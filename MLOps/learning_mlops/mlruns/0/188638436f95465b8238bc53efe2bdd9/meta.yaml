@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/Learning/AI/MLOps/learning_mlops/mlruns/0/188638436f95465b8238bc53efe2bdd9/artifacts
+end_time: 1728417046967
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 188638436f95465b8238bc53efe2bdd9
+run_name: zealous-penguin-350
+run_uuid: 188638436f95465b8238bc53efe2bdd9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1728417029691
+status: 3
+tags: []
+user_id: daivi
